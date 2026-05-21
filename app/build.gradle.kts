@@ -68,9 +68,9 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
 
-    // Glance Widget
-    implementation("androidx.glance:glance-appwidget:1.2.0-rc01")
-    implementation("androidx.glance:glance-material3:1.2.0-rc01")
+    // Glance Widget - Temporarily disabled due to dependency resolution issues
+    // implementation("androidx.glance:glance-appwidget:1.2.0-rc01")
+    // implementation("androidx.glance:glance-material3:1.2.0-rc01")
 
     // Compose
     implementation("androidx.compose.ui:ui:1.8.2")
