@@ -29,7 +29,11 @@ import kotlinx.coroutines.launch
 /**
  * Shopping List Widget - Glance で実装
  * WorkManager がバックグラウンドで定期的に更新したデータを表示
+ *
+ * Note: Widget functionality is temporarily disabled due to Glance dependency resolution issues.
+ * TODO: Resolve Glance 1.2.0-rc01 compatibility and re-enable widget functionality.
  */
+/*
 class ShoppingListWidget : GlanceAppWidget() {
     override val sizeMode = SizeMode.Single
     override val stateDefinition: GlanceStateDefinition<Preferences> = PreferencesGlanceStateDefinition
@@ -181,3 +185,4 @@ class ShoppingListWidgetReceiver : GlanceAppWidgetReceiver() {
         }
     }
 }
+*/
