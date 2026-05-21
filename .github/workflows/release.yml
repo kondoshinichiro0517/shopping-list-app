@@ -17,7 +17,11 @@ jobs:
         distribution: 'temurin'
 
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-home-cache-excludes: |
+          caches/modules-2/modules-2.lock
+          caches/modules-2/gc.properties
 
     - name: Make gradlew executable
       run: chmod +x gradlew
