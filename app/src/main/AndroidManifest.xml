@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Widget Receiver -->
+        <!-- Widget Receiver - Temporarily disabled due to Glance dependency issues
         <receiver
             android:name=".ShoppingListWidgetReceiver"
             android:exported="true">
@@ -30,6 +30,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/shopping_list_widget_info" />
         </receiver>
+        -->
 
     </application>
 
