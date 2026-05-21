@@ -1,7 +1,10 @@
 name: Release APK
 
 on:
-  workflow_dispatch:  # 手動トリガー（または tags: ['v*'] で自動）
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   release:
