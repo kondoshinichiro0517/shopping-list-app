@@ -69,8 +69,8 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
 
     // Glance Widget
-    implementation("androidx.glance:glance-appwidget:1.1.0")
-    implementation("androidx.glance:glance-material3:1.1.0")
+    implementation("androidx.glance:glance-appwidget:1.1.1")
+    implementation("androidx.glance:glance-material3:1.1.1")
 
     // Compose
     implementation("androidx.compose.ui:ui:1.6.0")
