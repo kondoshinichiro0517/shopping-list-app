@@ -22,5 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ShoppingList"
 include(":app")
-include(":wear")
+// include(":wear")  // Temporarily disabled due to AGP compatibility issues
 include(":shared")
