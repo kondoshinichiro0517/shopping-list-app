@@ -53,6 +53,10 @@ dependencies {
     implementation("androidx.wear.compose:compose-material3:1.5.0")
     implementation("androidx.wear.compose:compose-foundation:1.5.0")
 
+    // Material Icons
+    implementation("androidx.compose.material:material-icons-core:1.8.0")
+    implementation("androidx.compose.material:material-icons-extended:1.8.0")
+
     // Tiles
     implementation("androidx.wear.tiles:tiles:1.3.0")
     implementation("androidx.wear.tiles:tiles-material:1.3.0")

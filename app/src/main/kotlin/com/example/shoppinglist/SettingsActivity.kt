@@ -189,6 +189,7 @@ fun SettingsScreen(haClient: HAClient, onFinish: () -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        /*
         Button(
             onClick = {
                 val appWidgetManager = AppWidgetManager.getInstance(context)
@@ -205,6 +206,7 @@ fun SettingsScreen(haClient: HAClient, onFinish: () -> Unit) {
         ) {
             Text("📱 ホーム画面にウィジェットを追加")
         }
+        */
 
         Spacer(modifier = Modifier.height(16.dp))
 
