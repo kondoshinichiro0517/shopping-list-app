@@ -35,7 +35,10 @@ class HAClient(context: Context) {
         }
 
         private val httpClient: OkHttpClient by lazy {
-            OkHttpClient.Builder().build()
+            OkHttpClient.Builder()
+                .connectTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
+                .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
+                .build()
         }
     }
 
@@ -119,8 +122,6 @@ class HAClient(context: Context) {
             val request = Request.Builder()
                 .url(url)
                 .header("Authorization", "Bearer $token")
-                .connectTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
-                .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
                 .build()
 
             val response = HAClient.httpClient.newCall(request).execute()
@@ -171,8 +172,6 @@ class HAClient(context: Context) {
             val httpRequest = Request.Builder()
                 .url(url)
                 .header("Authorization", "Bearer $token")
-                .connectTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
-                .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
                 .post(requestBody)
                 .build()
 
