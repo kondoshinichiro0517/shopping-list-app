@@ -1,7 +1,5 @@
 package com.example.shoppinglist
 
-import android.appwidget.AppWidgetManager
-import android.content.ComponentName
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
