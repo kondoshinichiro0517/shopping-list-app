@@ -30,14 +30,14 @@ jobs:
       run: ./gradlew assembleRelease --no-build-cache 2>/dev/null || echo "Release build skipped (signing required)"
 
     - name: Upload Debug APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success()
       with:
         name: apk-debug
         path: app/build/outputs/apk/debug/app-debug.apk
 
     - name: Upload WearOS APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success()
       with:
         name: apk-wear-debug
