@@ -73,10 +73,10 @@ dependencies {
     implementation("androidx.glance:glance-material3:1.1.1")
 
     // Compose
-    implementation("androidx.compose.ui:ui:1.2.1")
-    implementation("androidx.compose.material3:material3:1.0.0")
-    implementation("androidx.compose.foundation:foundation:1.2.1")
-    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.compose.ui:ui:1.8.2")
+    implementation("androidx.compose.material3:material3:1.3.1")
+    implementation("androidx.compose.foundation:foundation:1.8.0")
+    implementation("androidx.activity:activity-compose:1.9.1")
 
     // Security
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
