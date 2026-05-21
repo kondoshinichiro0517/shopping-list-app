@@ -50,12 +50,12 @@ dependencies {
 
     // Wear
     implementation("androidx.wear:wear:1.3.0")
-    implementation("androidx.wear.compose:compose-material3:1.2.1")
-    implementation("androidx.wear.compose:compose-foundation:1.2.1")
+    implementation("androidx.wear.compose:compose-material3:1.5.0")
+    implementation("androidx.wear.compose:compose-foundation:1.5.0")
 
     // Tiles
-    implementation("androidx.wear:wear-tiles:1.3.0")
-    implementation("androidx.wear:wear-tiles-material:1.3.0")
+    implementation("androidx.wear.tiles:tiles:1.3.0")
+    implementation("androidx.wear.tiles:tiles-material:1.3.0")
 
     // Core
     implementation("androidx.core:core-ktx:1.12.0")
