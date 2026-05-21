@@ -1,5 +1,10 @@
 package com.example.shoppinglist
 
+// Widget functionality is temporarily disabled due to Glance dependency resolution issues.
+// The following imports are commented out along with the widget implementation.
+// TODO: Resolve Glance 1.2.0-rc01 compatibility and re-enable widget functionality.
+
+/*
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
@@ -25,6 +30,7 @@ import com.example.shoppinglist.shared.TodoItem
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.launch
+*/
 
 /**
  * Shopping List Widget - Glance で実装
