@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shopping List</string>
+    <string name="widget_description">買い物リストウィジェット - HA から取得した項目を表示・削除できます</string>
+</resources>

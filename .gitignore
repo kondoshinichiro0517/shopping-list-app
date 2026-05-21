@@ -1,0 +1,13 @@
+*.class
+*.apk
+*.dex
+*.so
+*.so.sha1
+.gradle/
+build/
+.idea/
+*.iml
+local.properties
+.DS_Store
+*.jks
+*.keystore
