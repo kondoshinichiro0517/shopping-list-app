@@ -9,6 +9,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
@@ -38,34 +40,13 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug
 
-    - name: List Build Outputs
-      if: success()
-      run: |
-        echo "Checking for APK files..."
-        find app/build -name "*.apk" -type f 2>/dev/null || echo "No APK files found"
-        echo "Full app/build directory:"
-        ls -la app/build/outputs/apk/debug/ 2>/dev/null || echo "Directory not found"
-
     - name: Create Release
-      if: success()
+      uses: softprops/action-gh-release@v1
+      with:
+        files: app/build/outputs/apk/debug/app-debug.apk
+        tag_name: release-${{ github.run_number }}
+        draft: false
+        prerelease: false
+        generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        SHORT_SHA=$(git rev-parse --short HEAD)
-        TAG_NAME="release-${SHORT_SHA}"
-
-        # Find APK file
-        APK_FILE=$(find app/build/outputs -name "*.apk" -type f | head -1)
-
-        if [ -z "$APK_FILE" ]; then
-          echo "ERROR: No APK file found"
-          exit 1
-        fi
-
-        echo "Found APK: $APK_FILE"
-
-        # Create release with found APK
-        gh release create "$TAG_NAME" \
-          "$APK_FILE" \
-          --title "APK Build $TAG_NAME" \
-          --notes "Automated APK release from commit $SHORT_SHA"
