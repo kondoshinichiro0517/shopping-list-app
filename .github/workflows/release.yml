@@ -39,14 +39,13 @@ jobs:
       run: ./gradlew assembleDebug
 
     - name: Create Release
-      uses: softprops/action-gh-release@v1
       if: success()
-      with:
-        files: |
-          app/build/outputs/apk/debug/app-debug.apk
-        draft: false
-        prerelease: false
-        generate_release_notes: true
-        tag_name: v${{ github.run_number }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        TAG_NAME="v${{ github.run_number }}"
+        gh release create "$TAG_NAME" \
+          app/build/outputs/apk/debug/app-debug.apk \
+          --title "Release $TAG_NAME" \
+          --notes "APK build from master branch" \
+          --draft=false
