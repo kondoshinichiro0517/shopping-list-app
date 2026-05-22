@@ -22,5 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ShoppingList"
 include(":app")
-// include(":wear")  // Temporarily disabled - WearOS module has unresolved dependencies
+include(":wear")
 include(":shared")
