@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ShoppingList" parent="android:Theme.Material.Light">
+    <style name="Theme.ShoppingList" parent="android:Theme.DeviceDefault">
         <item name="android:colorPrimary">#6750A4</item>
         <item name="android:colorPrimaryDark">#4A2454</item>
         <item name="android:colorAccent">#625B71</item>

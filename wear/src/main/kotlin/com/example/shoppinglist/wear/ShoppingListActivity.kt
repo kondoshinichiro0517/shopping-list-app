@@ -7,8 +7,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,9 +15,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.items
-import androidx.wear.compose.foundation.rememberActiveFocusRequester
 import androidx.wear.compose.material3.Chip
 import androidx.wear.compose.material3.ChipDefaults
+import androidx.wear.compose.material3.Icon
+import androidx.wear.compose.material3.IconButton
 import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.Text
 import com.example.shoppinglist.shared.HAClient
@@ -44,7 +43,6 @@ fun ShoppingListScreen(haClient: HAClient) {
     var isLoading by remember { mutableStateOf(true) }
     var error by remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
-    val focusRequester = rememberActiveFocusRequester()
 
     // 初回読み込み
     LaunchedEffect(Unit) {
@@ -102,7 +100,6 @@ fun ShoppingListScreen(haClient: HAClient) {
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxWidth(),
-                        focusRequester = focusRequester,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         items(items, key = { it.uid ?: it.name }) { item ->
