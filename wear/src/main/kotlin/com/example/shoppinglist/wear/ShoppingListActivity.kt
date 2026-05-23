@@ -10,7 +10,6 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
@@ -18,7 +17,6 @@ import androidx.wear.compose.foundation.lazy.items
 import androidx.wear.compose.material.Chip
 import androidx.wear.compose.material.ChipDefaults
 import androidx.wear.compose.material.Icon
-import androidx.wear.compose.material.IconButton
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import com.example.shoppinglist.shared.HAClient
@@ -143,33 +141,22 @@ fun ShoppingListScreen(haClient: HAClient) {
 @Composable
 fun ShoppingListItemChip(item: TodoItem, onRemove: (String) -> Unit) {
     Chip(
-        label = {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(4.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "• ${item.name}",
-                    fontSize = 12.sp,
-                    modifier = Modifier.weight(1f)
-                )
-                IconButton(
-                    onClick = { onRemove(item.name) },
-                    modifier = Modifier.size(24.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Close,
-                        contentDescription = "削除",
-                        modifier = Modifier.size(16.dp)
-                    )
-                }
-            }
-        },
-        onClick = { /* フルクリックは無効。アイコンボタンのクリックを使う */ },
+        onClick = { onRemove(item.name) },
         modifier = Modifier.fillMaxWidth(),
+        label = {
+            Text(
+                text = item.name,
+                fontSize = 12.sp,
+                modifier = Modifier.weight(1f)
+            )
+        },
+        icon = {
+            Icon(
+                imageVector = Icons.Default.Close,
+                contentDescription = "削除",
+                modifier = Modifier.size(16.dp)
+            )
+        },
         colors = ChipDefaults.secondaryChipColors()
     )
 }
