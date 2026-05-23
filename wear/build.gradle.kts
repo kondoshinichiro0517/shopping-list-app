@@ -50,7 +50,7 @@ dependencies {
 
     // Wear
     implementation("androidx.wear:wear:1.3.0")
-    implementation("androidx.wear.compose:compose-material3:1.5.0")
+    implementation("androidx.wear.compose:compose-material:1.5.0")
     implementation("androidx.wear.compose:compose-foundation:1.5.0")
 
     // Material Icons

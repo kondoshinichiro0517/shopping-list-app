@@ -43,7 +43,9 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        files: app/build/outputs/apk/debug/app-debug.apk
+        files: |
+          app/build/outputs/apk/debug/app-debug.apk
+          wear/build/outputs/apk/debug/wear-debug.apk
         tag_name: release-${{ github.run_number }}
         draft: false
         prerelease: false

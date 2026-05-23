@@ -15,12 +15,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.items
-import androidx.wear.compose.material3.Chip
-import androidx.wear.compose.material3.ChipDefaults
-import androidx.wear.compose.material3.Icon
-import androidx.wear.compose.material3.IconButton
-import androidx.wear.compose.material3.MaterialTheme
-import androidx.wear.compose.material3.Text
+import androidx.wear.compose.material.Chip
+import androidx.wear.compose.material.ChipDefaults
+import androidx.wear.compose.material.Icon
+import androidx.wear.compose.material.IconButton
+import androidx.wear.compose.material.MaterialTheme
+import androidx.wear.compose.material.Text
 import com.example.shoppinglist.shared.HAClient
 import com.example.shoppinglist.shared.TodoItem
 import kotlinx.coroutines.delay
@@ -56,20 +56,20 @@ fun ShoppingListScreen(haClient: HAClient) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colors.background),
         contentAlignment = Alignment.Center
     ) {
         if (isLoading) {
             Text(
                 text = "読み込み中...",
                 fontSize = 14.sp,
-                color = MaterialTheme.colorScheme.onBackground
+                color = MaterialTheme.colors.onSurface
             )
         } else if (error.isNotEmpty()) {
             Text(
                 text = "エラー: $error",
                 fontSize = 12.sp,
-                color = MaterialTheme.colorScheme.error,
+                color = MaterialTheme.colors.error,
                 modifier = Modifier.padding(16.dp)
             )
         } else {
@@ -83,7 +83,7 @@ fun ShoppingListScreen(haClient: HAClient) {
                 Text(
                     text = "🛒 買い物リスト",
                     fontSize = 14.sp,
-                    color = MaterialTheme.colorScheme.onBackground,
+                    color = MaterialTheme.colors.onSurface,
                     modifier = Modifier.padding(bottom = 4.dp)
                 )
 
@@ -92,7 +92,7 @@ fun ShoppingListScreen(haClient: HAClient) {
                     Text(
                         text = "リストが空です",
                         fontSize = 12.sp,
-                        color = MaterialTheme.colorScheme.outline,
+                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.4f),
                         modifier = Modifier.padding(8.dp)
                     )
                 } else {
